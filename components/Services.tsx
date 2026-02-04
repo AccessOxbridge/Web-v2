@@ -198,6 +198,9 @@ export default function Services() {
                             Services
                         </span>
                     </h2>
+                     <p className="max-w-3xl text-center mx-auto text-lg leading-relaxed font-sans opacity-80 transition-colors duration-500">
+                        Specialist support for <span className="font-bold">UK and Oxbridge applications</span>, carefully tailored to each student’s academic profile, goals, and stage of preparation. Carefully designed for <span className="font-bold">admissions excellence</span>.
+                    </p>
                 </div>
 
                 <motion.div

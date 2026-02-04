@@ -280,6 +280,8 @@
 .services-title-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-items: center;
     margin-top: 100px;
     /* Reduced from mt-96 to be more reasonable, or keep large? User had mt-96 = 24rem = 384px. Let's stick to 150px approx or use user's wish. User said margins weren't working. I'll use 150px. */
     gap: 32px;
