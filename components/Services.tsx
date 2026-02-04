@@ -99,10 +99,17 @@ export default function Services() {
     const steps = isOxbridge ? oxbridgeSteps : ukSteps;
 
     const services = [
+        {
+            title: "Comprehensive Admissions Programme",
+            icon: Target,
+            desc: "A fully integrated, end-to-end package supporting students across every stage of the admissions journey - from academic development and super-curricular strategy to admissions tests, interviews, and final application refinement. Designed for high potential students seeking structured, expert guidance with continuity, depth, and personalised oversight throughout the process.",
+            isPopular: true,
+            note: "Please Note: Limited Spaces Available",
+            cta: "EXPLORE THE PROGRAMME"
+        },
         { title: "UCAS Personal Statement Support", icon: FileText, desc: "Individual guidance to help students articulate academic motivation, supercurricular engagement, and subject readiness through a clear, authentic, and intellectually focused personal statement." },
-        { title: "Admissions Test Preparation", icon: Clock, desc: "Structured preparation for Oxbridge and competitive admissions tests, developing problem-solving ability, exam technique, and subject-specific thinking under timed conditions." },
         { title: "Oxbridge Interview Preparation", icon: GraduationCap, desc: "Rigorous interview preparation focused on academic discussion, critical thinking, and confidence, guided by Oxbridge graduates who understand subject-specific interview expectations." },
-        { title: "Medicine Interview Preparation", icon: Award, desc: "Targeted preparation for medical school interviews, including MMI and panel formats, with emphasis on ethical reasoning, communication skills, and reflective thinking." },
+        { title: "Admissions Test Preparation", icon: Clock, desc: "Structured preparation for Oxbridge and competitive admissions tests, developing problem-solving ability, exam technique, and subject-specific thinking under timed conditions." },
         { title: "International Application Guidance", icon: Users, desc: "Specialist support for international students, addressing curriculum differences, admissions expectations, and application strategy when applying to Oxbridge and UK universities." },
         { title: "Curriculum Support (GCSE/A-Level/IB)", icon: BookOpen, desc: "Targeted academic tuition to build the strong subject foundations, grades, and intellectual confidence required for successful applications to Oxbridge and other elite universities." },
     ];
@@ -198,7 +205,7 @@ export default function Services() {
                             Services
                         </span>
                     </h2>
-                     <p className="max-w-3xl text-center mx-auto text-lg leading-relaxed font-sans opacity-80 transition-colors duration-500">
+                    <p className="max-w-3xl text-center mx-auto text-lg leading-relaxed font-sans opacity-80 transition-colors duration-500">
                         Specialist support for <span className="font-bold">UK and Oxbridge applications</span>, carefully tailored to each student’s academic profile, goals, and stage of preparation. Carefully designed for <span className="font-bold">admissions excellence</span>.
                     </p>
                 </div>
@@ -215,9 +222,16 @@ export default function Services() {
                             <motion.div
                                 className={`service-card ${isOxbridge ? 'oxbridge-theme' : 'uk-theme'}`}
                             >
+                                {service.isPopular && (
+                                    <div className="card-badge">Most Popular</div>
+                                )}
                                 <div className="card-icon-box">
                                     <service.icon />
                                 </div>
+
+                                {service.note && (
+                                    <span className="card-note">{service.note}</span>
+                                )}
 
                                 <h3 className={`card-title ${!isOxbridge ? 'text-white' : 'text-dark'}`}>
                                     {service.title}
@@ -227,7 +241,7 @@ export default function Services() {
                                 </p>
 
                                 <div className="card-cta">
-                                    Find Your Mentor <ArrowRight className="w-4 h-4" />
+                                    {service.cta || "Find Your Mentor"} <ArrowRight className="w-4 h-4" />
                                 </div>
                             </motion.div>
                         </div>

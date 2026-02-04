@@ -433,3 +433,28 @@
     opacity: 1;
     transform: translateX(0);
 }
+
+.card-badge {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background-color: var(--accent-gold);
+    color: var(--primary-dark);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: 0 4px 12px rgba(201, 169, 97, 0.3);
+    z-index: 10;
+}
+
+.card-note {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #ef4444;
+    /* text-red-500 */
+    margin-bottom: 8px;
+    display: block;
+}
