@@ -3,7 +3,7 @@
 import "../app/globals.css";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-import Counter from "./Counter";
+
 import TypewriterEffect from "./TypewriterEffect";
 
 export default function Hero() {
@@ -62,36 +62,27 @@ export default function Hero() {
                             </a>
                         </motion.div>
                         <motion.div
-                            className="hero-stats"
+                            className="hero-trust-grid"
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.8 }}
                         >
-                            <div className="stat-item">
-                                <span className="stat-number">
-                                    <Counter target={1} />
-                                </span>
-                                <span className="stat-label">No. UK Mentor supplier</span>
-                            </div>
-                            <div className="stat-divider"></div>
-                            <div className="stat-item">
-                                <span className="stat-number">
-                                    <Counter target={98} />
-                                </span>
-                                <span className="stat-label">% Student Satisfaction</span>
-                            </div>
-                            <div className="stat-divider"></div>
-                            <div className="stat-item">
-                                <span className="stat-number">
-                                    <Counter target={400} />
-                                </span>
-                                <span className="stat-label">+ Success Rate Increase</span>
-                            </div>
+                            {[
+                                { icon: "fa-shield-alt", text: "Proven Track Record" },
+                                { icon: "fa-users", text: "Top 1% Mentors" },
+                                { icon: "fa-award", text: "Award-Winning Support" },
+                                { icon: "fa-graduation-cap", text: "Oxbridge Alumni Network" },
+                            ].map((item, index) => (
+                                <div key={index} className="hero-trust-item">
+                                    <i className={`fas ${item.icon}`}></i>
+                                    <span>{item.text}</span>
+                                </div>
+                            ))}
                         </motion.div>
                     </motion.div>
                 </div>
             </div>
-            <motion.div
+            {/* <motion.div
                 className="scroll-indicator"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -99,7 +90,7 @@ export default function Hero() {
             >
                 <span className="scroll-text">Scroll to explore</span>
                 <div className="scroll-arrow"></div>
-            </motion.div>
+            </motion.div> */}
         </section>
     );
 }

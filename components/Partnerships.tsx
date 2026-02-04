@@ -6,32 +6,58 @@ export default function Partnerships() {
     const partners = [
         {
             name: "University of Cambridge",
-            img: "https://sspark.genspark.ai/cfimages?u1=Cs9W6ToEiKldDiRgW0qQe1LaCWzki%2FxtPmzMvW3hX95i2yYuBv%2FwlcwBviyBt4loAMZqP09xmmN03ipeBqLcnYF2QvX8eYBeHMD2sDY5hAuCGswH&u2=YwQjFjk9qGPuniUT&width=2560",
+            img: "/cambridge.png",
+            scale: 1,
         },
         {
             name: "University of Oxford",
-            img: "https://sspark.genspark.ai/cfimages?u1=GumY89bXifA83siMRgUzEduAqsunVcwn5LStswe8yVx9doYd0%2B44m2FMIFmq2J7DCVSJNiTmSYrhzoyW6RgDOdJlehlwZbCfg1vYeqrz%2BUenIPU6bgWlVpOr2MReIbGgHmpNzeeYf0q1iILnXnqmsgbVTe%2Bl94aZ3RVgR%2BSruoyeWRrr%2Fx%2BC%2BcbeuFPA%2FGc%3D&u2=D1965lAU8p%2Bzcv2T&width=2560",
-        },
-        {
-            name: "Imperial College London",
-            img: "https://sspark.genspark.ai/cfimages?u1=ElYMgXIXUdB5qBYpVw8NP%2BDVTrJAF5KxKq28Vy3cjCmEshQDNKrPDXMa0L4nZRJBjzQT%2B8dvNGYJTgrjzhsBvXNWj72AjR9hgvxw8j2WuTGmVXv5uRVa9mTzkA%2FC2rweuYGWxH2piETEhIAM0NQtq0fS61tBHeUlK0RNk0zd%2B%2FnuTgWBHKRYipRJ1KvWKejLUsQFYw%3D%3D&u2=CCmuv%2FiBQxwG3v7m&width=2560",
-        },
-        {
-            name: "University College London",
-            img: "https://sspark.genspark.ai/cfimages?u1=dB2kVOZdqjAmlYrOcS%2BolvUNyW%2BKeX%2FkLRFcahzbl9vCFqAT5f8V%2ByEJzlm94AN4blQHeP9TiUghR3YUwdTfGKfLr6XocM67g31nkxb%2Bm38GQ2Gu67xAGBlCMcw6prBiMtuR%2BhYn63J2OJaLmQ%3D%3D&u2=%2F3pf2nsYBKNy6JYy&width=2560",
+            img: "/oxford.png",
         },
         {
             name: "LSE",
-            placeholder: true,
-            text: "LSE",
+            img: "/lse.png",
         },
         {
-            name: "Durham",
-            placeholder: true,
-            text: "Durham",
+            name: "UCL",
+            img: "/ucl.png",
+        },
+        {
+            name: "King's College London",
+            img: "/kings.png",
+        },
+        {
+            name: "Durham University",
+            img: "/durham.png",
+            scale: 1,
+        },
+        {
+            name: "Imperial College London",
+            img: "/imperial.png",
+            scale: 1,
+        },
+        {
+            name: "University of Edinburgh",
+            img: "/edinburgh.png",
+        },
+        {
+            name: "University of Bristol",
+            img: "/bristol.png",
+        },
+        {
+            name: "University of Manchester",
+            img: "/manchester.png",
+        },
+        {
+            name: "Queen Elizabeth's School",
+            img: "/queeneli.png",
+        },
+        {
+            name: "Scientia",
+            img: "/scientia.png",
         },
     ];
 
+    // Create a long enough list for seamless scrolling
     const carouselPartners = [...partners, ...partners, ...partners, ...partners];
 
     return (
@@ -59,15 +85,15 @@ export default function Partnerships() {
                             <div
                                 key={index}
                                 className="partner-logo-item"
+                                style={partner.scale ? {
+                                    width: `${200 * partner.scale}px`,
+                                    height: `${80 * partner.scale}px`
+                                } : undefined}
                             >
-                                {partner.placeholder ? (
-                                    <>
-                                        {/* Fallback for placeholders if needed, or use a default logo */}
-                                        <div className="text-center font-bold text-xl text-gray-400">{partner.text}</div>
-                                    </>
-                                ) : (
-                                    <img src={partner.img} alt={partner.name} />
-                                )}
+                                <img
+                                    src={partner.img}
+                                    alt={partner.name}
+                                />
                             </div>
                         ))}
                     </div>
