@@ -32,6 +32,8 @@ export default function Partnerships() {
         },
     ];
 
+    const carouselPartners = [...partners, ...partners, ...partners, ...partners];
+
     return (
         <section className="partnerships-section">
             <div className="container">
@@ -50,26 +52,25 @@ export default function Partnerships() {
                         We&apos;ve helped students gain admission to the UK&apos;s most prestigious institutions
                     </p>
                 </motion.div>
-                <div className="partners-logo-grid">
-                    {partners.map((partner, index) => (
-                        <motion.div
-                            key={index}
-                            className="partner-logo"
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: index * 0.1 }}
-                        >
-                            {partner.placeholder ? (
-                                <>
-                                    <img src="/images/logo.png" alt={partner.name} className="placeholder-logo" />
-                                    <span className="partner-name">{partner.text}</span>
-                                </>
-                            ) : (
-                                <img src={partner.img} alt={partner.name} />
-                            )}
-                        </motion.div>
-                    ))}
+
+                <div className="partners-carousel-container">
+                    <div className="partners-carousel-track">
+                        {carouselPartners.map((partner, index) => (
+                            <div
+                                key={index}
+                                className="partner-logo-item"
+                            >
+                                {partner.placeholder ? (
+                                    <>
+                                        {/* Fallback for placeholders if needed, or use a default logo */}
+                                        <div className="text-center font-bold text-xl text-gray-400">{partner.text}</div>
+                                    </>
+                                ) : (
+                                    <img src={partner.img} alt={partner.name} />
+                                )}
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>

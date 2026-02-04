@@ -1,0 +1,433 @@
+/* Services Component Styles */
+
+.services-section {
+    width: 100%;
+    padding: 120px 0;
+    transition: background-color 0.7s ease, color 0.7s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.services-section.oxbridge-mode {
+    background-color: var(--white);
+    color: var(--text-dark);
+}
+
+.services-section.uk-mode {
+    background-color: var(--primary-dark);
+    color: var(--white);
+}
+
+/* Header & Toggle */
+.services-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.toggle-container {
+    display: inline-flex;
+    background-color: #f1f5f9;
+    /* slate-100 */
+    padding: 4px;
+    border-radius: 9999px;
+    border: 1px solid #e2e8f0;
+    /* slate-200 */
+}
+
+.toggle-btn {
+    position: relative;
+    padding: 10px 32px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: 9999px;
+    transition: color 0.3s ease;
+    z-index: 10;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-body);
+}
+
+.toggle-btn.active {
+    color: var(--primary-dark);
+}
+
+.toggle-btn.inactive {
+    color: #64748b;
+    /* slate-500 */
+}
+
+.toggle-btn.inactive:hover {
+    color: #1e293b;
+    /* slate-800 */
+}
+
+/* Timeline */
+.timeline-container {
+    position: relative;
+    margin-bottom: 160px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 24px;
+}
+
+.timeline-track-bg {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #e2e8f0;
+    /* slate-200 */
+    transform: translateY(-50%);
+    display: none;
+}
+
+.timeline-track-progress {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--accent-gold);
+    transform-origin: left;
+    transform: translateY(-50%);
+    display: none;
+}
+
+@media (min-width: 768px) {
+
+    .timeline-track-bg,
+    .timeline-track-progress {
+        display: block;
+    }
+}
+
+.timeline-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+}
+
+@media (min-width: 768px) {
+    .timeline-grid {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 16px;
+    }
+}
+
+.timeline-step {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timeline-content-top {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 32px;
+    height: 192px;
+    /* h-48 */
+    justify-content: flex-end;
+    transition: opacity 0.5s ease;
+}
+
+.timeline-content-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 32px;
+    height: 192px;
+    /* h-48 */
+    justify-content: flex-start;
+    transition: opacity 0.5s ease;
+}
+
+@media (min-width: 768px) {
+    .timeline-content-top {
+        display: flex;
+    }
+
+    .timeline-content-top.hidden-md,
+    .timeline-content-bottom.hidden-md {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+}
+
+/* Timeline Nodes */
+.node-wrapper {
+    position: relative;
+    z-index: 10;
+    background-color: var(--white);
+    border-radius: 50%;
+    padding: 4px;
+    /* small gap for bg masking */
+}
+
+.timeline-node {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid;
+    transition: all 0.5s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+}
+
+.timeline-node svg {
+    width: 20px;
+    height: 20px;
+}
+
+.timeline-node:hover {
+    transform: scale(1.1);
+}
+
+.timeline-node.success {
+    background-color: #22c55e;
+    /* green-500 */
+    border-color: #4ade80;
+    /* green-400 */
+    color: white;
+    box-shadow: 0 0 15px rgba(34, 197, 94, 0.3);
+}
+
+.timeline-node.oxbridge {
+    background-color: var(--primary-dark);
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
+}
+
+.timeline-node.standard {
+    background-color: white;
+    border-color: #e2e8f0;
+    /* slate-200 */
+    color: #0f172a;
+    /* slate-900 */
+}
+
+/* Step Content Details */
+.step-details {
+    width: 100%;
+    padding: 0 8px;
+}
+
+.step-phase {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.step-title {
+    font-weight: 700;
+    margin-bottom: 8px;
+    line-height: 1.25;
+    letter-spacing: -0.025em;
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+}
+
+.step-desc {
+    font-size: 0.875rem;
+    line-height: 1.625;
+    font-weight: 500;
+    font-family: var(--font-body);
+}
+
+.text-white {
+    color: white;
+}
+
+.text-dark {
+    color: var(--primary-dark);
+}
+
+.text-gray-light {
+    color: #cbd5e1;
+}
+
+/* gray-300 */
+.text-gray-medium {
+    color: #94a3b8;
+}
+
+/* gray-400 */
+.text-gray-dark {
+    color: #64748b;
+}
+
+/* gray-500 */
+
+
+/* Services Grid Section */
+.services-title-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    /* Reduced from mt-96 to be more reasonable, or keep large? User had mt-96 = 24rem = 384px. Let's stick to 150px approx or use user's wish. User said margins weren't working. I'll use 150px. */
+    gap: 32px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-heading {
+    font-size: clamp(2.25rem, 5vw, 3rem);
+    /* 4xl to 5xl */
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    transition: color 0.5s ease;
+    font-family: var(--font-display);
+}
+
+.section-heading span {
+    transition: color 0.5s ease;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+@media (min-width: 768px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.service-card-wrapper {
+    display: block;
+    height: 100%;
+}
+
+.service-card {
+    position: relative;
+    padding: 40px;
+    border-radius: 16px;
+    border: 1px solid transparent;
+    transition: all 0.5s ease;
+    cursor: pointer;
+    height: 100%;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Card Themes */
+.service-card.uk-theme {
+    background-color: var(--primary-navy);
+    border-color: var(--primary-blue);
+}
+
+.service-card.oxbridge-theme {
+    background-color: white;
+    border-color: #f3f4f6;
+    /* gray-100 */
+}
+
+.service-card.oxbridge-theme:hover {
+    border-color: var(--accent-gold);
+}
+
+/* Card Icon */
+.card-icon-box {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 32px;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.uk-theme .card-icon-box {
+    background-color: var(--primary-blue);
+    color: var(--accent-gold);
+}
+
+.oxbridge-theme .card-icon-box {
+    background-color: var(--off-white);
+    color: var(--primary-dark);
+}
+
+.oxbridge-theme:hover .card-icon-box {
+    background-color: var(--primary-dark);
+    color: var(--accent-gold);
+}
+
+.card-icon-box svg {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover .card-icon-box svg {
+    transform: scale(1.1);
+}
+
+/* Card Text */
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    transition: color 0.5s ease;
+    font-family: var(--font-display);
+}
+
+.card-desc {
+    font-size: 0.875rem;
+    line-height: 1.625;
+    margin-bottom: 24px;
+    transition: color 0.5s ease;
+    font-family: var(--font-body);
+}
+
+/* Card CTA */
+.card-cta {
+    display: flex;
+    align-items: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    gap: 8px;
+    color: var(--accent-gold);
+    transition: all 0.3s ease;
+    transform: translateX(8px);
+    opacity: 1;
+}
+
+.service-card:hover .card-cta {
+    opacity: 1;
+    transform: translateX(0);
+}

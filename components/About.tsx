@@ -18,7 +18,7 @@ export default function About() {
                         Excellence Through <span className="gradient-text">Expert Mentorship</span>
                     </h2>
                     <p className="section-description">
-                        We are a collective of distinguished Oxbridge graduates dedicated to
+                        We are a collective of leading admissions experts dedicated to
                         democratizing access to elite education. Our mission is to empower
                         exceptional students with the knowledge, strategy, and confidence to
                         succeed in the world&apos;s most competitive admissions processes.

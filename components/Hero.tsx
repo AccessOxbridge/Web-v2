@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 import Counter from "./Counter";
+import TypewriterEffect from "./TypewriterEffect";
 
 export default function Hero() {
     const { scrollY } = useScroll();
@@ -24,24 +25,29 @@ export default function Hero() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                     >
-                        <span className="hero-label">Elite University Admissions</span>
                         <motion.h1
                             className="hero-title"
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
                         >
-                            Your Gateway to <span className="gradient-text">Oxbridge Excellence</span>
+                            The Masters of <span className="gradient-text">Elite University Admissions</span>
                         </motion.h1>
-                        <motion.p
+                        <motion.div
                             className="hero-description"
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.4 }}
                         >
-                            Transforming aspirations into admissions. Expert guidance from top 1%
-                            mentors who have mastered the journey to Oxford and Cambridge.
-                        </motion.p>
+                            <div className="typewriter-hero-container">
+                                <span className="exclusive-text">Exclusive Access to</span>
+                                <TypewriterEffect
+                                    words={["Graduates", "Admissions Experts", "Interview Specialists", "Senior Strategists"]}
+                                    className="typewriter-text"
+                                    cursorClassName="typewriter-cursor"
+                                />
+                            </div>
+                        </motion.div>
                         <motion.div
                             className="hero-cta"
                             initial={{ opacity: 0, y: 30 }}
@@ -63,9 +69,9 @@ export default function Hero() {
                         >
                             <div className="stat-item">
                                 <span className="stat-number">
-                                    <Counter target={400} />
+                                    <Counter target={1} />
                                 </span>
-                                <span className="stat-label">% Success Rate Increase</span>
+                                <span className="stat-label">No. UK Mentor supplier</span>
                             </div>
                             <div className="stat-divider"></div>
                             <div className="stat-item">
@@ -77,9 +83,9 @@ export default function Hero() {
                             <div className="stat-divider"></div>
                             <div className="stat-item">
                                 <span className="stat-number">
-                                    <Counter target={500} />
+                                    <Counter target={400} />
                                 </span>
-                                <span className="stat-label">+ Success Stories</span>
+                                <span className="stat-label">+ Success Rate Increase</span>
                             </div>
                         </motion.div>
                     </motion.div>
