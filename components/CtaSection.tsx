@@ -16,12 +16,12 @@ export default function CtaSection() {
                     <div className="cta-logo">
                         <img src="/images/logo.png" alt="Access Oxbridge" />
                     </div>
-                    <h2>Begin Your Journey to Oxbridge</h2>
+                    <h2>Begin Your Journey</h2>
                     <p>
                         Join hundreds of successful students who transformed their dreams into
                         reality with Access Oxbridge.
                     </p>
-                    <a href="#contact" className="btn btn-primary btn-large">
+                    <a href="#get-started" className="btn btn-primary btn-large">
                         Schedule Your Consultation
                     </a>
                 </motion.div>
