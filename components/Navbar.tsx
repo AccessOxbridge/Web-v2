@@ -64,7 +64,7 @@ export default function Navbar() {
                             </a>
                         </li>
                         <li>
-                            <a href="#contact" className="btn-nav" onClick={closeMobileMenu}>
+                            <a href="#get-started" className="btn-nav" onClick={closeMobileMenu}>
                                 Get Started
                             </a>
                         </li>

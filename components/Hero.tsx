@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import "../app/globals.css";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 import Counter from "./Counter";
@@ -54,7 +54,7 @@ export default function Hero() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.6 }}
                         >
-                            <a href="#contact" className="btn btn-primary">
+                            <a href="#get-started" className="btn btn-primary">
                                 Start Your Journey
                             </a>
                             <a href="#services" className="btn btn-secondary">

@@ -7,7 +7,7 @@ import Services from "@/components/Services";
 import Results from "@/components/Results";
 import Testimonials from "@/components/Testimonials";
 import CtaSection from "@/components/CtaSection";
-import Contact from "@/components/Contact";
+import ConsultationSignup from "@/components/ConsultationSignup";
 import Footer from "@/components/Footer";
 import CustomCursor from "@/components/CustomCursor";
 
@@ -24,7 +24,7 @@ export default function Home() {
       <Results />
       <Testimonials />
       <CtaSection />
-      <Contact />
+      <ConsultationSignup />
       <Footer />
     </main>
   );
